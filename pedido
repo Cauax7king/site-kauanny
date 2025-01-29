@@ -1,1 +1,78 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quer namorar comigo?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ffafbd, #ffc3a0);
+      text-align: center;
+      color: #333;
+      padding: 20px;
+      margin: 0;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      color: #ff6f61;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+    button {
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+      position: relative;
+    }
+    button:hover {
+      background-color: #ff4b47;
+    }
+    #nao {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>Você aceita namorar comigo? ❤️</h1>
+
+  <!-- Botão SIM -->
+  <button id="sim" onclick="aceitar()">Sim</button>
+
+  <!-- Botão NÃO -->
+  <button id="nao" onclick="fugir()">Não</button>
+
+  <!-- Música -->
+  <audio id="musica" src="evoce.mp3"></audio>
+
+  <script>
+    // Função para quando clicar em "Sim"
+    function aceitar() {
+      const musica = document.getElementById('musica');
+      musica.play(); // Toca a música
+      alert("Você é o amor da minha vida! ❤️");
+    }
+
+    // Função para quando clicar em "Não"
+    function fugir() {
+      const botaoNao = document.getElementById('nao');
+      // Gera posições aleatórias dentro da tela
+      const x = Math.random() * (window.innerWidth - botaoNao.offsetWidth);
+      const y = Math.random() * (window.innerHeight - botaoNao.offsetHeight);
+      botaoNao.style.left = x + 'px';
+      botaoNao.style.top = y + 'px';
+    }
+  </script>
+</body>
+</html>
